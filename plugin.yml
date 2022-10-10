@@ -1,0 +1,15 @@
+name: NapTheAuto
+main: BeeAZ\NapTheAuto\NapThe
+api: 4.0.0
+version: 0.0.1
+author: BeeAZ
+#Website Support https://vuathe.net/
+
+commands:
+  napthe:
+    description: Open NapTheAuto
+    permission: napthe.command
+    
+permissions:
+  napthe.command:
+    default: true
