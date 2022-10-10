@@ -35,7 +35,7 @@ class SendCard extends AsyncTask{
               "code" => $this->mathe,
               "serial" => $this->serial,
               "amount" => $this->menhgia,
-              "request_id" => intval(time()),
+              "request_id" => $this->request,
               "partner_id" => $this->id,
               "sign" => $data_sign,
               "command" => "charging"
