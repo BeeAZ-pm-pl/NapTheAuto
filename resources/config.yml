@@ -16,7 +16,7 @@ commands: "givemoney {PLAYER} {AMOUNT}"
 economy: false
 economy.use: "DFRuby"
 
-#Plugin Chỉ Hỗ Trợ Website Vuathe.xyz
-#id và key lấy tại web vuathe.xyz vào danh mục rồi kết nối api chọn GET và callback bạn ghi gì cũng được
+#Plugin Chỉ Hỗ Trợ Website Vuathe.Net
+#id (partner_id) và key (partner_key) lấy tại web vuathe.net vào danh mục rồi kết nối api nhập tên ( gì cũng đc ) , Hình Thức (Kiểu) Post, callback bạn ghi domain hoặc ip của server bạn
 id: "8955440592"
 key: "5825a2f49af984c06f3c1015fba5c5ad"
