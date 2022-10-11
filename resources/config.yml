@@ -2,7 +2,7 @@ description: "Nạp Thẻ Ngay Tại Đây"
 reward: "10k = 10Coin\n20k = 20Coin\n30k = 30Coin\n50k = 50Coin\n100k = 100Coin\n200k = 200Coin\n300k = 300Coin\n500k = 500Coin"
 rate: 1000 #1000 Vnđ = 1 Coin
 bonus: 1 #event các sự kiện nạp thẻ x2,3,4
-broadcastsuccess: "Cảm Ơn Bạn Đã Ủng Hộ Server, {PLAYER}"
+broadcastsuccess: "Cảm Ơn {PLAYER} Đã Ủng Hộ Server Thẻ {AMOUNT}đ"
 #Để "" Nếu Bạn Muốn Tắt Commands Khi Nạp Thành Công
 #{PLAYER} Lấy Tên Của Player
 #{AMOUNT} Số Phần Thưởng Nhận Được
@@ -11,7 +11,7 @@ broadcastsuccess: "Cảm Ơn Bạn Đã Ủng Hộ Server, {PLAYER}"
 commands: "givemoney {PLAYER} {AMOUNT}"
 
 #Tôi khuyên chân thành bạn nên sử dụng tính năng này thay cho commands. Vì commands sẽ bị lỗi khi player có tên dấu cách
-#Support EconomyAPI, CoinAPI, PointAPI, DFRuby
+#Support EconomyAPI, CoinAPI, PointAPI, DFRuby, SCoinAPI
 #Nêú Bạn Sử Dụng Tiền Tệ Như BedrockEconomy, Capital Thì Vui Lòng Tự Chỉnh Trong NapThe.php
 economy: false
 economy.use: "DFRuby"
