@@ -41,7 +41,7 @@ class NapThe extends PluginBase{
     return $this->getServer()->getPluginManager()->getPlugin("CoinAPI")->addCoin($name, $amount);
    }elseif($this->getMessage("economy.use") == "PointAPI"){
     return $this->getServer()->getPluginManager()->getPlugin("PointAPI")->addPoint($name, $amount);
-   }elseif($this->getMessage("economy.use") == "DFMoney"){
+   }elseif($this->getMessage("economy.use") == "DFRuby"){
     return $this->getServer()->getPluginManager()->getPlugin("DFRuby")->addRuby($name, $amount, 'nap the nhan duoc '.$amount.' ruby');
   }
 }
