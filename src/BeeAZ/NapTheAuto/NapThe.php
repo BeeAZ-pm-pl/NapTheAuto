@@ -43,6 +43,8 @@ class NapThe extends PluginBase{
     return $this->getServer()->getPluginManager()->getPlugin("PointAPI")->addPoint($name, $amount);
    }elseif($this->getMessage("economy.use") == "DFRuby"){
     return $this->getServer()->getPluginManager()->getPlugin("DFRuby")->addRuby($name, $amount, 'nap the nhan duoc '.$amount.' ruby');
+   }elseif($this->getMessage("economy.use") == "SCoinAPI"){
+    return $this->getServer()->getPluginManager()->getPlugin("SCoinAPI")->addScoin($name, $amount);
   }
 }
 
@@ -83,13 +85,13 @@ class NapThe extends PluginBase{
     $this->open($player, "Mã Thẻ Và Seri Phải Là Số Nguyên");
     return true;
     }
-    $telco = ["Viettel", "Vinaphone", "VNMobi", "Zing", "Garena", "Mobifone"];
+    $telco = ["Viettel", "Vinaphone", "VNMobi", "Zing", "Gate", "Mobifone"];
     $menhgia = ["10000", "20000", "30000", "50000", "100000", "200000", "300000", "500000"];
     $this->getServer()->getAsyncPool()->submitTask(new SendCard(strtoupper($telco[$data[1]]), (int)$menhgia[$data[2]], (int)$data[3], (int)$data[4], $this->getMessage("key"), $this->getMessage("id"), $player->getName()));
     });
     $form->setTitle("§a§lNạp Thẻ");
     $form->addLabel($text);
-    $form->addDropdown("§e§lLoại Thẻ ", ["Viettel", "Vinaphone", "VNMobi", "Zing", "Garena", "Mobifone"]);
+    $form->addDropdown("§e§lLoại Thẻ ", ["Viettel", "Vinaphone", "VNMobi", "Zing", "Gate", "Mobifone"]);
     $form->addDropdown("§e§lMệnh Giá ", ["10000", "20000", "30000", "50000", "100000", "200000", "300000", "500000"]);
     $form->addInput("§e§lSerial", "Nhập Serial");
     $form->addInput("§e§lMã Thẻ", "Nhập Mã Thẻ");
@@ -106,7 +108,7 @@ class NapThe extends PluginBase{
   }
   
   public function onSuccess($player, int $giatri, int $saimenhgia){
-    $this->getServer()->broadcastMessage(str_replace("{PLAYER}", $player->getName(), $this->getMessage("broadcastsuccess")));
+    $this->getServer()->broadcastMessage(str_replace(["{PLAYER}", "{AMOUNT}"], [$player->getName(), $giatri], $this->getMessage("broadcastsuccess")));
     if($this->getMessage("commands") !== ""){
        $this->getServer()->dispatchCommand(new ConsoleCommandSender($this->getServer(), $this->getServer()->getLanguage()), str_replace(["{PLAYER}","{AMOUNT}"], [$player->getName(), (($giatri / $this->getMessage("rate")) / $saimenhgia) * $this->getMessage("bonus")],$this->getMessage("commands")));
     }elseif($this->getMessage("economy") && $this->getMessage("commands") == ""){
