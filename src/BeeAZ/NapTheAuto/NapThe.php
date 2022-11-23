@@ -111,7 +111,7 @@ class NapThe extends PluginBase{
     $this->getServer()->broadcastMessage(str_replace(["{PLAYER}", "{AMOUNT}"], [$player->getName(), $giatri], $this->getMessage("broadcastsuccess")));
     if($this->getMessage("commands") !== ""){
        $this->getServer()->dispatchCommand(new ConsoleCommandSender($this->getServer(), $this->getServer()->getLanguage()), str_replace(["{PLAYER}","{AMOUNT}"], [$player->getName(), (($giatri / $this->getMessage("rate")) / $saimenhgia) * $this->getMessage("bonus")],$this->getMessage("commands")));
-    }elseif($this->getMessage("economy") && $this->getMessage("commands") == ""){
+    }elseif($this->getMessage("economy.use") && $this->getMessage("commands") == ""){
        $this->addReward($player->getName(), (($giatri / $this->getMessage("rate")) / $saimenhgia) * $this->getMessage("bonus"));
     }
     $this->data->setNested("{$player->getName()}.amount", $giatri);
